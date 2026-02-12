@@ -10,6 +10,8 @@ Advanced JAVA:
     of the abstract class type (Dynamic Dispatch:   reference type: Abstract class(Parent),
                                                     object type: (Concrete class or non-abstract class)subclass).
 -> An abstract class can have 0(zero) or more abstract methods.
+-> If a class cannot implement all the abstract methods of the abstract class,
+    then we need to declare the class as abstract, which is another abstract class.
 
 -> inner class:
     - A class which is declared inside the body of another class is called an inner class.
@@ -70,3 +72,102 @@ Advanced JAVA:
         the method execution will be decided by the object type at runtime.(runtime polymorphism).
         Parent a = new Child(); // upcasting
         Child c = (Child) a; // down-casting
+
+
+-> Anonymous inner class:
+    - An anonymous inner class is a class which is declared without a name and it is created
+        when the object of the class is created.
+    - An anonymous inner class is used to provide the implementation of an interface or to extend a class.
+    - when we are creating a class only to provide the override the method (includes interface method
+        which implementation class) it will create a another class file, so to avoid that we can use
+        anonymous inner class.
+    syntax:
+    // to avoid the extends class file creation and not for only one method
+        we can create any methods in the anonymous inner class.
+    class Parent {
+        void method() {
+            System.out.println("Parent method");
+        }
+    }
+    public class Test {
+        public static void main(String[] args) {
+            Parent p = new Parent() { // anonymous inner class
+                void method() {
+                    System.out.println("Child method");
+                }
+            };
+            p.method(); // it will call the overridden method of the anonymous inner class.
+        }
+    }
+
+    // to avoid the implementation class file creation
+    interface A {
+        void method();
+    }
+    public class Test {
+        public static void main(String[] args) {
+            A a = new A() { // anonymous inner class
+                // here we are creating not object of A class, we are creating the object
+                    of the anonymous inner class which is implementing the A interface.
+                public void method() {
+                    System.out.println("Implementation of method");
+                }
+            };
+            a.method(); // it will call the implemented method of the anonymous inner class.
+        }
+    }
+
+-> Interface:
+    - If we write the only abstract methods in abstract cless, then instead of using the
+        abstract class, we can use the interface.
+    - An interface is not a class.
+    - In interface, by default the all methods are 'public abstract' methods, so
+        even we don't write the 'public abstract' keyword, it will be considered as 'public abstract' method.
+    - To use the interface, we need to implement the interface in the class by using the
+        'implements' keyword.
+    - If you don't use all methods in the interface, then you need to declare the class as abstract,
+        which is another abstract class and use keyword 'abstract' and 'implements' keyword
+        if it implements partial abstract methods from the interface.
+
+    - Every instance variable in the interface is by default 'public static final' variable,
+        so even we don't write the 'public static final' keyword, it will be considered as
+        'public static final' variable.
+    - If the variable ae static, then we can access the variable by using the interface name,
+        because static members are accessed by using the class name or interface name.
+
+        example:
+        interface Animal {
+            void makeSound();
+            void eat();
+        }
+
+        abstract class Dog implements Animal {
+            // Abstract class can implement some methods
+            @Override
+            public void eat() {
+                System.out.println("Dog is eating");
+            }
+            // makeSound() is not implemented here
+        }
+
+        class Labrador extends Dog {
+            @Override
+            public void makeSound() {
+                System.out.println("Woof Woof!");
+            }
+        }
+
+        public class Main {
+            public static void main(String[] args) {
+                Animal lab = new Labrador();
+                lab.makeSound(); // Woof Woof!
+                lab.eat();       // Dog is eating
+            }
+        }
+
+
+-> A Class can extend only one class.
+-> A Class can implement multiple interfaces.
+-> An interface can extend multiple interfaces.
+-> An abstract class can implement multiple interfaces.
+-> An abstract class can extend another abstract class.
