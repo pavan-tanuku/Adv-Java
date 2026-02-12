@@ -1,0 +1,72 @@
+Advanced JAVA:
+
+-> Abstract methods are used to achieve abstraction in Java.
+-> An abstract only contains the method signature and not the method body.
+-> An abstract method is declared using the abstract keyword and ***must be implemented by the
+    (concrete class)subclass***, if the parent class is declared as abstract and extends the abstract class.
+-> An abstract method is declared only in an Abstract class.
+-> An abstract class can have both abstract and non-abstract methods.
+-> You ***cannot create an instance of an abstract class***,but you can create a reference variable
+    of the abstract class type (Dynamic Dispatch:   reference type: Abstract class(Parent),
+                                                    object type: (Concrete class or non-abstract class)subclass).
+-> An abstract class can have 0(zero) or more abstract methods.
+
+-> inner class:
+    - A class which is declared inside the body of another class is called an inner class.
+    - An inner class is also called a nested class.
+    - To access the inner class, first we need to create the object of the outer class.
+    - you can make the inner class as static or non-static.
+    syntax:
+        class OuterClass {
+            // instance variable
+            // methods
+            class InnerClass {
+                // instance variable
+                // methods
+            }
+        }
+        public class Test {
+            main method {
+                OuterClass outer = new OuterClass();
+                // accessing the inner class
+                OuterClass.InnerClass inner = outer.new InnerCass();
+            }
+        }
+    - when you make the inner class as static, you can access the inner class without creating
+        object of the outer class.
+        syntax:
+            class OuterClass {
+                // instance variable
+                // methods
+                static class InnerClass {
+                    // instance variable
+                    // methods
+                }
+            }
+            public class Test {
+                main method {
+                    // accessing the inner class
+                    OuterClass.InnerClass inner = new OuterClass.InnerClass();
+                }
+            }
+
+    - When you make the inner class as static, you cannot make the outer class as static.
+
+-> When Reference type != Object type:
+    Thing:                                      Decided by:
+    - Method availability                       Reference type
+    - Overridden method execution               Object type
+
+
+-> Down-casting and Upcasting doubts:
+    - Parent a = new Parent(); // the object type is Parent, If
+        Child c = (Child) a; // it will compile but get the ClassCastException at runtime. Because
+        the object type is Parent, if we cast it to Child type, it will throw the ClassCastException.
+
+    - the down-cast can be done only when the object type is the Child.
+    - When we create the object as upcasting, we can do the down-casting, and the object store
+        both Parent and Child properties, but the parent memers are accessible by the parent reference,
+        because it will be decided by the compiler. When there is a overridden method,
+        the method execution will be decided by the object type at runtime.(runtime polymorphism).
+        Parent a = new Child(); // upcasting
+        Child c = (Child) a; // down-casting
