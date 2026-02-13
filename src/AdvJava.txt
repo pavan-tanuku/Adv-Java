@@ -118,7 +118,7 @@ Advanced JAVA:
     }
 
 -> Interface:
-    - If we write the only abstract methods in abstract cless, then instead of using the
+    - If we write the only abstract methods in abstract class, then instead of using the
         abstract class, we can use the interface.
     - An interface is not a class.
     - In interface, by default the all methods are 'public abstract' methods, so
@@ -169,5 +169,18 @@ Advanced JAVA:
 -> A Class can extend only one class.
 -> A Class can implement multiple interfaces.
 -> An interface can extend multiple interfaces.
--> An abstract class can implement multiple interfaces.
--> An abstract class can extend another abstract class.
+-> An abstract class can implement multiple interfaces, and it can only extend one class.
+
+Need of Interface:
+-> Interface is need to generalize the common properties and behaviors of different classes.
+    - To develop an application, the developer need computer which performs 'coding', 'testing', etc
+        the developer can not depend on laptop only, or desktop only, but both do same work.
+        so, we can create an interface 'Computer' which contains the common properties and behaviors
+        of the laptop and desktop, and then we can implement the Computer interface in both
+        laptop and desktop class, so that we can achieve the abstraction and polymorphism.
+
+
+-> Enumerations (Enums):
+    - An enums are named constants which we create.
+    - Instead of creating objects for the class, we can create the objects for the enum,
+        because enum is a class.
