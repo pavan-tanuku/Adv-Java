@@ -5,8 +5,8 @@ enum Status {
 }
 
 public class Demo {
-    static void main(String[] args) {
-        Status e = Status.Pending;
+    public static void main(String[] args) {
+        Status e = Status.Running;
         System.out.println(e);
         System.out.println("Iterating Enum using values() and Enhanced for loop");
         // getting ordinal of all and values() return an array
@@ -21,7 +21,7 @@ public class Demo {
             case Running -> System.out.println("All Good");
             case Pending -> System.out.println("Please wait!");
             case Failed -> System.out.println("Try again");
-            case Successful -> System.out.println("Done");
+            default -> System.out.println("Done");
         }
     }
 }
