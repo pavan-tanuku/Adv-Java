@@ -179,8 +179,34 @@ Need of Interface:
         of the laptop and desktop, and then we can implement the Computer interface in both
         laptop and desktop class, so that we can achieve the abstraction and polymorphism.
 
+                                   Types of Interfaces
+                                            |
+                                            |
+                    -----------------------------------------------------
+                    |                       |                           |
+                    |                       |                           |
+                Normal                  ***Functional/SAM              Marker
+                                    ( Single Abstract Method )
+
+
+    - Normal: Having 2 or more methods.
+    - Functional: Having exactly one method.
+    - Marker: Having 0(zero) methods.
 
 -> Enumerations (Enums):
-    - An enums are named constants which we create.
+    - An enums are named constants which we create, these constants are the objects of the enum class.
     - Instead of creating objects for the class, we can create the objects for the enum,
         because enum is a class.
+    - It is type safe, because it will accept only the predefined constants which can be
+        any value type (int, String, etc).
+    - By default, the enum constants are 'public static final'.
+    - We can create the fields, methods and constructor in the enum class.
+
+-> Annotation:
+    - Simply, annotation means a supplement to the compiler or at the runtime (or) we also
+        call it as a metadata.
+    - This is for to reduce the compile time errors, by interaction of the compiler with
+        the programmer when the programmer uses annotations.
+        example: @Override - tells the compiler you are overriding, if there is wrong
+            in your code, you will encounter with the alert.
+
