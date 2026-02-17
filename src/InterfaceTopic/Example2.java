@@ -25,7 +25,12 @@ public class Example2 {
                 System.out.println("Showing..");
             }
         };
-
         d.show();
+
+        // using the lambda expression
+        FunctionalInterfaceDemo d1 = () -> {
+            System.out.println("This is lambda expression..");
+        };
+        d1.show();
     }
 }
