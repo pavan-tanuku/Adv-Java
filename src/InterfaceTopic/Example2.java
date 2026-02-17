@@ -2,7 +2,7 @@ package InterfaceTopic;
 
 @FunctionalInterface
 interface FunctionalInterfaceDemo {
-    void show();
+    void show(int i, int j);
 }
 
 //class Run implements FunctionalInterfaceDemo {
@@ -21,16 +21,17 @@ public class Example2 {
         FunctionalInterfaceDemo d = new FunctionalInterfaceDemo()
         {
             @Override
-            public void show() {
-                System.out.println("Showing..");
+            // we even don't declare the data type of local variables
+            public void show(int i, int j) {
+                System.out.println("Showing.." + "i: " + i + ",j: " + j);
             }
         };
-        d.show();
+        d.show(1, 2);
 
         // using the lambda expression
-        FunctionalInterfaceDemo d1 = () -> {
-            System.out.println("This is lambda expression..");
+        FunctionalInterfaceDemo d1 = (i, j) -> {
+            System.out.println("This is lambda expression.." + "i: " + i + ",j: " + j);
         };
-        d1.show();
+        d1.show(1, 3);
     }
 }
