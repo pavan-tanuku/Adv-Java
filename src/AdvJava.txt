@@ -210,3 +210,18 @@ Need of Interface:
         example: @Override - tells the compiler you are overriding, if there is wrong
             in your code, you will encounter with the alert.
 
+-> we can only use Lambda expression with functional interface.
+-> when ever you are using lambda expression, and you are returning, you don't put the return keyword
+    when this is only one statement.
+
+-> Exceptions:
+    errors: - Compile time error.
+            - Runtime error. (Exception's)
+            - Logical error.
+    - The Exceptions are the runtime errors, which are handled by try, catch, finally block.
+    - You can have multiple try and catch block and more catch block for one try block.
+    - The 'Exception' is the parent class of all the exceptions, should be handled at the end of the
+        catch block, because it is the parent class of all the exceptions.
+    - The 'err' printstream is used to print the error message in the console,
+        these are displayed after all the normal output, and it is used to print the error message
+        in red color in the console.
